@@ -1,0 +1,19 @@
+language: python
+
+install:
+  - pip install
+  - pip install gitpython
+
+script:
+  - cd _tools/
+  - python create_repo.py
+
+before_deploy:
+  - cd ../pages
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master

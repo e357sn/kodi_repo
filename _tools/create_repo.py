@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os
+import stat
 import md5
 import re
 import zipfile
@@ -45,6 +46,7 @@ class main:
                 raise RuntimeError("Need GitPython")
             for repo_url in repo_urls:
                 self._git_clone(repo_url[0], repo_url[1])
+                shutil.rmtree('_temp')
 
     def _git_clone(self, name, url):
         # Parse the format "REPOSITORY_URL#BRANCH:PATH". The colon is a delimiter
@@ -63,7 +65,7 @@ class main:
             clone_source_folder = os.path.join(clone_path)
             shutil.copytree(temp_path + '/' + clone_source_folder, (self.path_ad + os.path.sep + name))
         finally:
-            shutil.rmtree(temp_path, ignore_errors=True)
+            shutil.rmtree(temp_path, onerror=del_rw)
             print (name + " done")
 
     def _generate_repo_files(self):
@@ -155,8 +157,13 @@ class main:
             if os.path.isfile(self.output_path + addonid + os.path.sep + filename):
                 os.remove(self.output_path + addonid + os.path.sep + filename )
             shutil.move(filename, self.output_path + addonid + os.path.sep + filename)
+            shutil.move(path + os.path.sep + 'icon.png', self.output_path + addonid + os.path.sep + 'icon.png')
         except Exception, e:
             print e
+
+def del_rw(action, name, exc):
+    os.chmod(name, stat.S_IWRITE)
+    os.remove(name)
 
 if __name__ == "__main__":
     main()

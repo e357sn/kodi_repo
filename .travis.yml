@@ -9,7 +9,7 @@ script:
   - python create_repo.py
 
 before_deploy:
-  - cd ../pages
+  - cd pages/
 
 deploy:
   provider: pages

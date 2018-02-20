@@ -159,6 +159,7 @@ class main:
             shutil.move(filename, self.output_path + addonid + os.path.sep + filename)
             shutil.move(path + os.path.sep + 'icon.png', self.output_path + addonid + os.path.sep + 'icon.png')
             shutil.move(path + os.path.sep + 'fanart.jpg', self.output_path + addonid + os.path.sep + 'fanart.jpg')
+            shutil.move(path + os.path.sep + 'changelog.txt', self.output_path + addonid + os.path.sep + 'changelog.txt')
         except Exception, e:
             print e
 

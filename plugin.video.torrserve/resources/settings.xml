@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="30000">
+        <!-- Connectivity -->
+        <setting label="30001" type="lsep" />
+        <setting id="remote_host" label="30002" type="text" default="127.0.0.1" />
+        <setting id="remote_port" label="30003" type="number" default="8090" />
+        <!-- View -->
+        <setting label="30004" type="lsep" />
+        <setting id="without_info" label="30005" type="bool" default="false" />
+    </category>
+	<category label="30010">
+		<setting id="install_service" type="action" label="Install Torrserver Service" action="RunPlugin(plugin://plugin.video.torrserve/?action=install_service)" enable="true" visible="!System.HasAddon(script.service.torrserver)"/> 
+		<setting id="CacheSize" label="Cache Size" type="number" default="200" />
+		<setting id="PreloadBufferSize" label="Preload Size" type="number" default="20" />
+		<setting id="DisableTCP" label="Disable TCP" type="bool" default="False" />
+		<setting id="DisableUTP" label="Disable UTP" type="bool" default="False" />
+		<setting id="DisableUPNP" label="Disable UPNP" type="bool" default="False" />
+		<setting id="DisableDHT" label="Disable DHT" type="bool" default="False" />
+		<setting id="DisableUpload" label="Disable Upload" type="bool" default="False" />
+		<setting id="Encryption" label="Encryption" type="number" default="0" />
+		<setting id="RetrackersMode" label="ReTracker Mode" type="number" default="1" />
+		<setting id="DownloadRateLimit" label="Download Speed Limit" type="number" default="0" />
+		<setting id="UploadRateLimit" label="Upload Speed Limit" type="number" default="0" />
+		<setting id="ConnectionsLimit" label="Limit Connection" type="number" default="150" />
+	</category>
+</settings>

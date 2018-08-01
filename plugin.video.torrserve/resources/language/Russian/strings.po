@@ -1,0 +1,86 @@
+# Kodi Media Center language file
+# Addon Name: TorrServe
+# Addon id: plugin.video.torrserve
+# Addon Provider: Nemiroff
+#
+msgid ""
+msgstr ""
+
+# Settings
+msgctxt "#30000"
+msgid "General"
+msgstr "Общие"
+
+msgctxt "#30001"
+msgid "Connectivity"
+msgstr "Соединение"
+
+msgctxt "#30002"
+msgid "TorrServe URL"
+msgstr "TorrServe URL"
+
+msgctxt "#30003"
+msgid "TorrServe Port"
+msgstr "TorrServer Port (По-умолчанию 8090)"
+
+msgctxt "#30004"
+msgid "View"
+msgstr "Отображение"
+
+msgctxt "#30005"
+msgid "Dont show in list torrent without info"
+msgstr "Не отображать в списке торренты без инфо"
+
+msgctxt "#30010"
+msgid "TorrServe Settings"
+msgstr "Настройки TorrServer"
+
+
+msgctxt "#30200"
+msgid "Server is down"
+msgstr "Сервер %s не отвечает"
+
+# AddonGUI
+msgctxt "#30300"
+msgid "Torrents List"
+msgstr "Список торрентов"
+
+msgctxt "#30301"
+msgid "Search"
+msgstr "Поиск"
+
+msgctxt "#30302"
+msgid "Settings"
+msgstr "Настройки"
+
+msgctxt "#30303"
+msgid "Search Movies"
+msgstr "Поиск фильмов"
+
+msgctxt "#30304"
+msgid "Search Shows"
+msgstr "Поиск сериалов"
+
+msgctxt "#30305"
+msgid "Search Torrents"
+msgstr "Поиск торрентов"
+
+msgctxt "#30306"
+msgid "Search Discover"
+msgstr "Поиск по просматриваемому"
+
+msgctxt "#30307"
+msgid "Add to DB"
+msgstr "Сохранить в списке"
+
+msgctxt "#30308"
+msgid "Delete from DB"
+msgstr "Удалить из списка"
+
+msgctxt "#30309"
+msgid "line2"
+msgstr "Подключенно: %d | Активных: %d | Всего: %d"
+
+msgctxt "#30310"
+msgid "sec"
+msgstr "сек"

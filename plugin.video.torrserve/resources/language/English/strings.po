@@ -44,28 +44,8 @@ msgctxt "#30300"
 msgid "Torrents List"
 msgstr ""
 
-msgctxt "#30301"
-msgid "Search"
-msgstr ""
-
 msgctxt "#30302"
 msgid "Settings"
-msgstr ""
-
-msgctxt "#30303"
-msgid "Search Movies"
-msgstr ""
-
-msgctxt "#30304"
-msgid "Search Shows"
-msgstr ""
-
-msgctxt "#30305"
-msgid "Search Torrents"
-msgstr ""
-
-msgctxt "#30306"
-msgid "Search Discover"
 msgstr ""
 
 msgctxt "#30307"

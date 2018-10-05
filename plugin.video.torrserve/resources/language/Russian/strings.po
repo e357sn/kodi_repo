@@ -54,20 +54,12 @@ msgid "Settings"
 msgstr "Настройки"
 
 msgctxt "#30303"
-msgid "Search Movies"
-msgstr "Поиск фильмов"
+msgid "Empty result"
+msgstr "Ничего не найденно"
 
 msgctxt "#30304"
-msgid "Search Shows"
-msgstr "Поиск сериалов"
-
-msgctxt "#30305"
-msgid "Search Torrents"
-msgstr "Поиск торрентов"
-
-msgctxt "#30306"
-msgid "Search Discover"
-msgstr "Поиск по просматриваемому"
+msgid "Wait for info..."
+msgstr "Ждем получения информации о раздаче..."
 
 msgctxt "#30307"
 msgid "Add to DB"

@@ -23,10 +23,6 @@ msgctxt "#30003"
 msgid "TorrServe Port"
 msgstr ""
 
-msgctxt "#30010"
-msgid "TorrServe Settings"
-msgstr ""
-
 msgctxt "#30004"
 msgid "View"
 msgstr ""
@@ -34,6 +30,11 @@ msgstr ""
 msgctxt "#30005"
 msgid "Dont show in list torrent without info"
 msgstr ""
+
+msgctxt "#30010"
+msgid "TorrServe Settings"
+msgstr ""
+
 
 msgctxt "#30200"
 msgid "Server is down"
@@ -44,8 +45,20 @@ msgctxt "#30300"
 msgid "Torrents List"
 msgstr ""
 
+msgctxt "#30301"
+msgid "Search"
+msgstr ""
+
 msgctxt "#30302"
 msgid "Settings"
+msgstr ""
+
+msgctxt "#30303"
+msgid "Empty result"
+msgstr ""
+
+msgctxt "#30304"
+msgid "Wait for info..."
 msgstr ""
 
 msgctxt "#30307"

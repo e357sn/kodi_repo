@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.audio.rediorecord" name="RadioRecord" version="0.0.1" provider-name="Nemiroff">
+<addon id="plugin.audio.radiorecord" name="RadioRecord" version="0.0.1" provider-name="Nemiroff">
     <requires>
         <import addon="xbmc.python" version="2.20.0" />
     </requires>

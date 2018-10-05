@@ -23,5 +23,6 @@
 		<setting id="DownloadRateLimit" label="Download Speed Limit" type="number" default="0" />
 		<setting id="UploadRateLimit" label="Upload Speed Limit" type="number" default="0" />
 		<setting id="ConnectionsLimit" label="Limit Connection" type="number" default="150" />
+		<setting id="PeersListenPort" label="PeersListenPort" type="number" default="0" />
 	</category>
 </settings>

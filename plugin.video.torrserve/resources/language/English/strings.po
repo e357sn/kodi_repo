@@ -31,6 +31,11 @@ msgctxt "#30005"
 msgid "Dont show in list torrent without info"
 msgstr ""
 
+msgctxt "#30006"
+msgid "Autosave item from search"
+msgstr ""
+
+
 msgctxt "#30010"
 msgid "TorrServe Settings"
 msgstr ""

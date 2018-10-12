@@ -39,6 +39,25 @@ msgctxt "#30010"
 msgid "TorrServe Settings"
 msgstr "Настройки TorrServer"
 
+msgctxt "#30011"
+msgid "Settings saved! Restart service"
+msgstr "Настройки изменены.[CR]Перезапускаем сервис"
+
+msgctxt "#30012"
+msgid "Settings not saved!"
+msgstr "Настройки не сохранены!"
+
+msgctxt "#30013"
+msgid "Saved!"
+msgstr "Сохранено!"
+
+msgctxt "#30014"
+msgid "Deleted!"
+msgstr "Удалено!"
+
+msgctxt "#30015"
+msgid "Choose a file"
+msgstr "Выберете файл:"
 
 msgctxt "#30200"
 msgid "Server is down"

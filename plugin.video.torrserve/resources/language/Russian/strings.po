@@ -60,7 +60,7 @@ msgid "Choose a file"
 msgstr "Выберете файл:"
 
 msgctxt "#30200"
-msgid "Server is down"
+msgid "Server %s is down"
 msgstr "Сервер %s не отвечает"
 
 # AddonGUI
@@ -93,8 +93,8 @@ msgid "Delete from DB"
 msgstr "Удалить из списка"
 
 msgctxt "#30309"
-msgid "line2"
-msgstr "Подключенно: %d | Активных: %d | Всего: %d"
+msgid "Connected: %d | Active: %d | Total: %d"
+msgstr "Подключено: %d | Активных: %d | Всего: %d"
 
 msgctxt "#30310"
 msgid "sec"

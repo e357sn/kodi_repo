@@ -41,27 +41,27 @@ msgstr ""
 
 msgctxt "#30011"
 msgid "Settings saved! Restart service"
-msgstr "Settings saved![CR]Restart service"
+msgstr ""
 
 msgctxt "#30012"
 msgid "Settings not saved!"
-msgstr "Настройки не сохранены!"
+msgstr ""
 
 msgctxt "#30013"
 msgid "Saved!"
-msgstr "Сохранено!"
+msgstr ""
 
 msgctxt "#30014"
 msgid "Deleted!"
-msgstr "Удалено!"
+msgstr ""
 
 msgctxt "#30015"
 msgid "Choose a file"
-msgstr "Выберете файл:"
+msgstr ""
 
 msgctxt "#30200"
-msgid "Server is down"
-msgstr "Server %s is down"
+msgid "Server %s is down"
+msgstr ""
 
 # AddonGUI
 msgctxt "#30300"
@@ -86,16 +86,16 @@ msgstr ""
 
 msgctxt "#30307"
 msgid "Add to DB"
-msgstr "Add to list"
+msgstr ""
 
 msgctxt "#30308"
 msgid "Delete from DB"
-msgstr "Delete from list"
+msgstr ""
 
 msgctxt "#30309"
-msgid "line2"
-msgstr "Connected: %d | Active: %d | Total: %d"
+msgid "Connected: %d | Active: %d | Total: %d"
+msgstr ""
 
 msgctxt "#30310"
 msgid "sec"
-msgstr "sec"
+msgstr ""

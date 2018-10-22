@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.torrserve" name="TorrServer Client" version="0.0.10" provider-name="Nemiroff">
+<addon id="plugin.video.torrserve" name="TorrServer Client" version="0.0.11" provider-name="Nemiroff">
     <requires>
         <import addon="xbmc.addon" version="16.0.0" />
         <import addon="xbmc.python" version="2.24.0" />
@@ -11,7 +11,9 @@
     <extension point="xbmc.python.module" library="resources/site-packages" />
     <extension point="xbmc.addon.metadata">
         <summary lang="en">TorrServe: Torrent video streaming</summary>
+        <summary lang="ru">TorrServe: потоковое воспроизведение видеоторрентов</summary>
         <description lang="en">TorrServe is a torrent streaming engine. It doesn't go on torrent websites for legal reasons.</description>
+        <description lang="ru">TorrServe - Смотрите фильмы, сериалы, видео, слушайте музыку с торрентов без предварительного скачивания.[CR]Просто добавьте торрент файл или Magnet ссылку и наслаждайтесь шоу — загрузка и воспроизведение будут идти одновременно</description>
         <language>en</language>
         <platform>all</platform>
         <forum></forum>

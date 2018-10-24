@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="repository.nemiroff" version="1.0.0" name="Nemiroff Repository" provider-name="Nemiroff">
+<addon id="repository.nemiroff" version="1.0.1" name="Nemiroff Repository" provider-name="Nemiroff">
 <extension point="xbmc.addon.metadata">
   <summary lang="en">Nemiroff Repository</summary>
   <summary lang="ru">Репозиторий Nemiroff.</summary>
@@ -10,8 +10,8 @@
   <platform>all</platform>
 </extension>
 <extension point="xbmc.addon.repository" name="nemiroff repository">
-  <info compressed="false">http://nemiroff.github.io/kodi_repo/repo/addons.xml</info>
-  <checksum>http://nemiroff.github.io/kodi_repo/repo/addons.xml.md5</checksum>
-  <datadir zip="true">http://nemiroff.github.io/kodi_repo/repo</datadir>
+  <info compressed="false">https://nemiroff.github.io/kodi_repo/repo/addons.xml</info>
+  <checksum>https://nemiroff.github.io/kodi_repo/repo/addons.xml.md5</checksum>
+  <datadir zip="true">https://nemiroff.github.io/kodi_repo/repo</datadir>
 </extension>
 </addon>

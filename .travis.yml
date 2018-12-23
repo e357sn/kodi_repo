@@ -6,7 +6,7 @@ install:
 
 script:
   - cd _tools/
-  - python create_repo.py
+  - travis_retry python create_repo.py
 
 deploy:
   provider: pages

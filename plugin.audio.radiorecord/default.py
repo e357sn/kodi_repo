@@ -1,60 +1,88 @@
+# -*- coding: utf-8 -*-
 import json
-import sys
-import urllib
-import urlparse
-import xbmc
-import xbmcgui
+import urllib2
+import re
 import xbmcplugin
-from urllib2 import urlopen, Request
+from simpleplugin import RoutedPlugin
+plugin = RoutedPlugin()
 
-def build_url(query):
-    base_url = sys.argv[0]
-    return base_url + '?' + urllib.urlencode(query)
-    
-def get_page(url):
-    return urlopen(Request(url)).read()
-    
-def parse_page(page):
-    resp_dict = json.loads(page.decode('utf-8'))
-    stations = resp_dict['result']
-    stations_sorted = sorted(stations, key=lambda x: x['title'])
-    return stations_sorted
-    
-def build_station_list(stations):
-    station_list = []
+@plugin.route('/')
+def root():
+    listing = get_station_list()
+    listing.append({
+        'label': 'Крем и Хруст',
+        'url': plugin.url_for('podcast'),
+        'thumb': 'http://www.radiorecord.ru/upload/resize_cache/uf/902/372_372_1/902e949801fba494cda263b179bcd7e9.png',
+        'is_folder': True,
+        'info': {
+            'music': {
+                'genre': 'Подкаст',
+                'mediatype': 'song'
+            }
+        }
+    })
+    return plugin.create_listing(listing, content='albums', view_mode=500, sort_methods=xbmcplugin.SORT_METHOD_LABEL, cache_to_disk=True)
+
+@plugin.route('/podcast', name='podcast')
+def podcast():
+    USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'
+    url = 'http://www.radiorecord.ru/radio/heroes/777123/'
+    headers = {'User-Agent' : USER_AGENT}
+    request = urllib2.Request(url, None, headers)
+    response = urllib2.urlopen(request).read()
+    test = re.finditer(r'item_url="(http:.+?)">.+?class="name"> (.+?)<', response, re.DOTALL)
+    listing = []
+    num = 0
+    for i in test:
+        name = i.group(2)
+        num = num + 1
+        listing.append({
+            'label': "Крем и Хруст - %s" % name,
+            'thumb': 'http://www.radiorecord.ru/upload/iblock/8aa/8aa72169cfa40478ac72ff015eeeadd9.png',
+            'fanart': 'https://www.infpol.ru/upload/iblock/ad0/ad009fba6d7082b0009a8fa679474e71.jpg',
+            'is_folder': False,
+            'is_playable': True,
+            'url': plugin.url_for('play', url=i.group(1)),
+            'info': {
+                'music': {
+                        'tracknumber': num,
+                        'title': name,
+                        'artist': "Кремов и Хрусталев",
+                        'mediatype': 'song',
+                    }
+                }
+            })
+    return plugin.create_listing(listing, content='songs', cache_to_disk=True)
+
+@plugin.route('/play')
+def play():
+    return plugin.resolve_url(plugin.params.url, succeeded=True)
+
+def get_station_list():
+    page = urllib2.urlopen('http://www.radiorecord.ru/radioapi/stations/').read()
+    apiResp = json.loads(page.decode('utf-8'))
+    stations = apiResp['result']
+    listing = []
+    num = 0
     for station in stations:
-        li = xbmcgui.ListItem(
-            label=station['title'],
-            thumbnailImage=station['icon_png'],
-        )
-        li.setInfo('music', { 
-                    'artist': station['artist'],
-                    'titles': station['song'],
-                    })
-        li.setProperty('IsPlayable', 'true')
-        url = build_url({'mode': 'stream', 'url': station['stream_320'], 'title': station['prefix']})
-        station_list.append((url, li, False))
-    xbmcplugin.addDirectoryItems(addon_handle, station_list, len(station_list))
-    xbmcplugin.setContent(addon_handle, 'albums')
-    xbmc.executebuiltin('Container.SetViewMode(500)')
-    xbmcplugin.endOfDirectory(addon_handle, cacheToDisc=True)
+        listing.append({
+            'label': station['title'],
+            'thumb': station['icon_png'],
+            'icon': station['icon_png'].replace('3x.', '2x.'),
+            'is_folder': False,
+            'is_playable': True,
+            'url': plugin.url_for('play', url=station['stream_320']),
+            'info': {
+                'music': {
+                        'genre': station['title'],
+                        'artist': station['artist'],
+                        'mediatype': 'song',
+                    }
+                }
+            })
+    return listing
     
-def play_station(url):
-    play_item = xbmcgui.ListItem(path=url)
-    xbmcplugin.setResolvedUrl(addon_handle, True, listitem=play_item)
-    
-def main():
-    args = urlparse.parse_qs(sys.argv[2][1:])
-    mode = args.get('mode', None)
-    
-    if mode is None:
-        page = get_page(api_page)
-        content = parse_page(page)
-        build_station_list(content)
-    elif mode[0] == 'stream':
-        play_station(args['url'][0])
-    
+
 if __name__ == '__main__':
     api_page = 'http://www.radiorecord.ru/radioapi/stations/'
-    addon_handle = int(sys.argv[1])
-    main()
+    plugin.run()

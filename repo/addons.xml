@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="script.module.torrent2http" name="torrent2http" version="0.1.0" provider-name="anteo">
+    <requires>
+        <import addon="xbmc.python" version="2.14.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <language>en</language>
+        <summary lang="en">Downloads torrents and share it over HTTP</summary>
+        <summary lang="ru">Загружает торренты и раздает их по HTTP</summary>
+        <description lang="ru">Обеспечивает последовательную (sequential) загрузку торрентов для потокового онлайн просмотра через HTTP. Основан на библиотеке LibTorrent.</description>
+        <description lang="en">Provides sequential torrent downloading for online streaming video and other media over HTTP.</description>
+        <email>anteo@academ.org</email>
+    </extension>
+</addon>
+
+<addon id="repository.nemiroff" version="1.0.1" name="Nemiroff Repository" provider-name="Nemiroff">
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Nemiroff Repository</summary>
+  <summary lang="ru">Репозиторий Nemiroff.</summary>
+  <summary lang="uk">Репозиторій Nemiroff</summary>
+  <description lang="en">Addon repository by Nemiroff</description>
+  <description lang="ru">Репозиторий дополнений Nemiroff</description>
+  <description lang="uk">Репозиторій надбудов Nemiroff</description>
+  <platform>all</platform>
+</extension>
+<extension point="xbmc.addon.repository" name="nemiroff repository">
+  <info compressed="false">https://nemiroff.github.io/kodi_repo/repo/addons.xml</info>
+  <checksum>https://nemiroff.github.io/kodi_repo/repo/addons.xml.md5</checksum>
+  <datadir zip="true">https://nemiroff.github.io/kodi_repo/repo</datadir>
+</extension>
+</addon>
+
+<addon id="script.service.torrserver" name="TorrServer" version="1.1.68" provider-name="YouROK, Nemiroff">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0" />
+    </requires>
+    <extension point="xbmc.service" library="service.py" start="startup" />
+    <extension point="xbmc.python.module" library="resources/site-packages" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">TorrServer</summary>
+		<summary lang="ru">TorrServer</summary>
+        <description lang="en">TorrServer is a torrent streaming engine.</description>
+		<description lang="ru">TorrServer - сервис для стриминга торрентов.</description>
+        <language>en,ru</language>
+        <platform>all</platform>
+        <forum></forum>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart></fanart>
+            <screenshot>home.png</screenshot>
+            <screenshot>search.png</screenshot>
+            <screenshot>torrents.png</screenshot>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.audio.radiorecord" name="Radio Record" version="0.0.3" provider-name="Nemiroff">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Radio Record</summary>
+        <license>GNU General Public License, v2</license>
+        <description lang="en">Add-on for RadioRecord from http://www.radiorecord.ru/</description>
+        <description lang="ru">Аддон для RadioRecord.ru</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.torrserve" name="TorrServer Client" version="0.0.14" provider-name="Nemiroff">
+    <requires>
+        <import addon="xbmc.addon" version="16.0.0" />
+        <import addon="xbmc.python" version="2.24.0" />
+        <import addon="script.service.torrserver" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="navigation.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.module" library="resources/site-packages" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">TorrServe: Torrent video streaming</summary>
+        <summary lang="ru">TorrServe: потоковое воспроизведение видеоторрентов</summary>
+        <description lang="en">TorrServe is a torrent streaming engine. It doesn't go on torrent websites for legal reasons.</description>
+        <description lang="ru">TorrServe - Смотрите фильмы, сериалы, видео, слушайте музыку с торрентов без предварительного скачивания.[CR]Просто добавьте торрент файл или Magnet ссылку и наслаждайтесь шоу — загрузка и воспроизведение будут идти одновременно</description>
+        <language>en, ru</language>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="script.elementum.nova" name="Elementum [COLOR FF5CB9FF]Nova[/COLOR]" version="1.0.27" provider-name="Nemiroff">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+        <import addon="plugin.video.elementum" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.script" library="nova.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <news>v1.0.27 (14.03.2019)[CR] + Добавлен TorLook (rutor, nnm, rutracker, underverse)[CR][CR] * Поправлено отображение размера раздач у Toloka[CR][CR] * Добавлены ретрекеры к создаваемому магнету у Kinozal[CR][CR]v1.0.26 (21.02.2019)[CR] * Очередные правки доменов: rutor, megapeer, rustorka, tfile[CR][CR]v1.0.25 (27.01.2019)[CR] + Возвращена поддержка Kodi 16.1[CR] + Добавлен провайдер YOHOHO[CR] * Поправлена авторизация и поиск сериалов на Toloka[CR][CR]v1.0.24 (31.12.2018)[CR] * Исправлена проблема с прокси [CR] * Исправленна проблема при поиске по допстранице[CR] * Исправлен адрес у rutor.lib[CR][CR]v1.0.23 (29.12.2018)[CR] * Исправлена проблема с авторизацией на трекерах[CR][CR]v1.0.22 (28.12.2018)[CR] * Обход недоступности контента на LostFilm[CR] * Настройки таймаута из Elementum[CR] * Правильное отображение названий в Kodi 18[CR] - Удалены torrent3d.ru и 3d-tracker.ru[CR] + Добавлен toloka.to[CR] + Добавлен torrent.by[CR] + Добавлен Lutik.tv [CR] + Добавлена поддержка встроенного прокси Elementum[CR][CR]v1.0.20 (21.09.2018)[CR] * Исправлен поиск по NNM[CR] * Последняя правка домена для tfile[CR] * Правки поиска на LostFilm[CR][CR]v1.0.19 (20.07.2018)[CR] - Возвращение старой нормализации для LostFilm.[CR] * Обновлен домен у MegaPeer.[CR] * Исправлен поиск по BlueBird[CR][CR]v1.0.18 (05.07.2018) [CR] - Откат изменений по преобразованию названия.[CR] * Исправлен поиск по Bluebird-hd.[CR] * Исправлено определение Remux.[CR] * Исправлено определение типа разрешения на Baibako.tv[CR][CR]v1.0.17 (01.07.2018)[CR] * Исправлен поиск сериала "Плащ и кинжал" на LostFilm[CR]- Удален провайдер serialz.tv[CR]+ Добавлена настройка для вывода отладки парсера.[CR]* Обновлен фильтр для трейлеров.[CR][CR]v1.0.16 (26.05.2018)[CR]* Исправлен глобальный поиск. Убраны параметры поиска фильмов с трекеров сериалов.[CR]* Очередная правка поиска на LostFilm. Добавил уведомление при ошибке авторизации.[CR]* v1.0.15 (02.05.2018)[CR]* Исправлен поиск ссылок на Kinozal.TV. Теперь MagnetURL генерируется скриптом[CR][CR]v1.0.14 (04.04.2018)[CR]* Исправлен поиск "Агенты ЩИТ" на Lostfilm[CR]* Исправлен поиск по tfile[CR]* Исправлены ошибки в идентификации Remux/BD-Disc[CR][CR]v1.0.13 (26.03.2018)[CR]+ Добавлен BlueBird и специальный тип релиза Remux/Blu-Ray Disc (Отключен по умолчанию)[CR]* Поправлен поиск на Rustorka, ранее не все раздачи попадали в выдачу[CR]* Поправлен фильтр Telesync, ранее он не отключался.[CR]+ Добавлен (поправлен) поиск аниме[CR][CR]v1.0.12 (19.03.2018)[CR]* Поправлен поиск на NewStudio и BaibaKo[CR]* Уменьшен таймаут для провайдера[CR]* Замена зеркала для NNM-Club[CR][CR]1.0.11 (05.03.2018)[CR]* Поправлен поиск на NewStudio[CR]+ В настройках добавлена вкладка "Эксперимент". Включение опций в данной вкладке могут вызывать проблемы в работе плагина[CR][CR]v1.0.10 (21.02.2018)[CR]* Домены lib активируются только с включенной опцией[CR]+ Добавлены 720i 1080i в фильтра 720p 1080p[CR]*Поправлена фильтрация 4К[CR][CR]v1.0.9 (20.02.2018)[CR]* Отображение размера раздач на Lostfilm.TV[CR]* Поправлен поиск на Casstudio.tv[CR][CR]v1.0.8 (20.02.2018)[CR]- Kinozal.guru заменён на Kinozal.tv[CR]+ Добавлен Casstudio.tv</news>
+        <summary lang="en">Elementum torrents provider</summary>
+        <summary lang="ru">Elementum трекер-провайдер</summary>
+        <description lang="en">Elementum Nova is a lean and mean multi-provider for Elementum.</description>
+        <description lang="ru">Elementum Nova это маленький и быстрый мульти-провайдер для Elementum.</description>
+        <disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.
+        </disclaimer>
+        <language>en ru ua</language>
+        <platform>all</platform>
+        <license>WTFPL, Version 2, December 2004. See included LICENSE.</license>
+        <website>https://nemiroff.surge.sh</website>
+        <source>https://github.com/Nemiroff/script.elementum.nova</source>
+        <forum></forum>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.lostfilm.tv" name="LostFilm.TV" version="1.0.5" provider-name="Nemiroff, anteo">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+        <import addon="script.module.requests" version="2.7.0"/>
+        <import addon="script.module.torrent2http" version="0.0.9"/>
+        <import addon="script.service.torrserver" optional="true"/>
+        <import addon="metadata.tvdb.com" version="2.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <language>ru en</language>
+        <website>http://lostfilm.tv/</website>
+        <source>https://github.com/Nemiroff/plugin.video.lostfilm.tv</source>
+        <summary lang="en">Explore LostFilm.TV</summary>
+        <summary lang="ru">Ваш проводник по порталу LostFilm.TV</summary>
+        <description lang="ru">Просматривайте новые серии любимых сериалов с портала LostFilm.TV!</description>
+        <description lang="en">Watch new episodes of your favorite TV shows on LostFilm.TV!</description>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <news>[B]Версия 1.0.5[/B]
+* Переезд на https для старого сайта. Возможны проблемы на старых версиях Коди
+* Обновлена иконка
+* Добавлена настройка частоты обновления базы
+[B]Версия 1.0.4[/B]
+* В названии папки используется оригинальное имя и год.
+* Корректное создание папки библиотеки и настройки TVDB
+* Исправление запуска на Kodi 18
+[B]Версия 1.0.3[/B]
++ Добавлена поддержка Elementum
+[B]Версия 1.0.2[/B]
+* Авторизация по E-Mail на www.lostfilm.tv вместо old.lostfilm.tv
+[B]Версия 1.0.1[/B]
+* Настройки прелоада для TorrServe
+[B]Версия 1.0.0[/B]
+* Восстановлена работоспособность по старому сайту.
+- Убран AceStream Engine
++ Добавлен TorrServe
+        </news>
+    </extension>
+</addon>
+
+<addon id="plugin.video.chsv" name="ЧСВ" version="0.0.1" provider-name="Nemiroff">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="ru">Что Сегодня Включить</summary>
+        <license>GNU General Public License, v2</license>
+        <description lang="ru">ЧСВ - аддон отображающий свежие релизы в лучшем качестве.</description>
+        <disclaimer lang="ru">Моряки отправляются в далекое плавание...</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="script.quasar.nova" name="Quasar [COLOR FF5CB9FF]Nova[/COLOR]" version="1.0.21" provider-name="Nemiroff">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+        <import addon="plugin.video.quasar" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.script" library="burst.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <news>[COLOR=FFFF0000]v1.0.21[CR]Последняя версия.[CR]Дальнейшая поддержка не будет осуществляться.[/COLOR][CR][CR]v1.0.20 (21.09.2018)[CR] * Исправлен поиск по NNM[CR] * Последняя правка домена для tfile[CR] * Правки поиска на LostFilm[CR][CR]v1.0.19 (20.07.2018)[CR] - Возвращение старой нормализации для LostFilm.[CR] * Обновлен домен у MegaPeer.[CR] * Исправлен поиск по BlueBird[CR][CR]v1.0.18 (05.07.2018) [CR] - Откат изменений по преобразованию названия.[CR] * Исправлен поиск по Bluebird-hd.[CR] * Исправлено определение Remux.[CR] * Исправлено определение типа разрешения на Baibako.tv[CR][CR]v1.0.17 (01.07.2018)[CR] * Исправлен поиск сериала "Плащ и кинжал" на LostFilm[CR]- Удален провайдер serialz.tv[CR]+ Добавлена настройка для вывода отладки парсера.[CR]* Обновлен фильтр для трейлеров.[CR][CR]v1.0.16 (26.05.2018)[CR]* Исправлен глобальный поиск. Убраны параметры поиска фильмов с трекеров сериалов.[CR]* Очередная правка поиска на LostFilm. Добавил уведомление при ошибке авторизации.[CR]* v1.0.15 (02.05.2018)[CR]* Исправлен поиск ссылок на Kinozal.TV. Теперь MagnetURL генерируется скриптом[CR][CR]v1.0.14 (04.04.2018)[CR]* Исправлен поиск "Агенты ЩИТ" на Lostfilm[CR]* Исправлен поиск по tfile[CR]* Исправлены ошибки в идентификации Remux/BD-Disc[CR][CR]v1.0.13 (26.03.2018)[CR]+ Добавлен BlueBird и специальный тип релиза Remux/Blu-Ray Disc (Отключен по умолчанию)[CR]* Поправлен поиск на Rustorka, ранее не все раздачи попадали в выдачу[CR]* Поправлен фильтр Telesync, ранее он не отключался.[CR]+ Добавлен (поправлен) поиск аниме[CR][CR]v1.0.12 (19.03.2018)[CR]* Поправлен поиск на NewStudio и BaibaKo[CR]* Уменьшен таймаут для провайдера[CR]* Замена зеркала для NNM-Club[CR][CR]1.0.11 (05.03.2018)[CR]* Поправлен поиск на NewStudio[CR]+ В настройках добавлена вкладка "Эксперимент". Включение опций в данной вкладке могут вызывать проблемы в работе плагина[CR][CR]v1.0.10 (21.02.2018)[CR]* Домены lib активируются только с включенной опцией[CR]+ Добавлены 720i 1080i в фильтра 720p 1080p[CR]*Поправлена фильтрация 4К[CR][CR]v1.0.9 (20.02.2018)[CR]* Отображение размера раздач на Lostfilm.TV[CR]* Поправлен поиск на Casstudio.tv[CR][CR]v1.0.8 (20.02.2018)[CR]- Kinozal.guru заменён на Kinozal.tv[CR]+ Добавлен Casstudio.tv</news>
+        <summary lang="en">Quasar torrents provider</summary>
+        <summary lang="ru">Quasar трекер-провайдер</summary>
+        <description lang="en">Quasar Nova is a lean and mean multi-provider for Quasar.</description>
+        <description lang="ru">Quasar Nova это маленький и быстрый мульти-провайдер для Quasar.</description>
+        <disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.
+        </disclaimer>
+        <language>en ru ua</language>
+        <platform>all</platform>
+        <license>WTFPL, Version 2, December 2004. See included LICENSE.</license>
+        <website>https://nemiroff.github.io/kodi_repo</website>
+        <source>https://github.com/Nemiroff/script.quasar.nova</source>
+        <forum></forum>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+</addons>

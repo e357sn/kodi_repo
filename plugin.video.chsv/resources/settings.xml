@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="Основные">
+        <setting id="unblock_ua" type="bool" label="Обход блокировок для UA" default="false" />
+        <setting id="api_page" type="enum" label="Источник данных" values="ЧСВ|НЦР" default="0" />
+        <setting id="use_engine" type="enum" label="Использовать " values="Elementum|TorrServe" default="0"/>
+        <setting type="ipaddress" id="ts-host" label="IP" visible="eq(-1,1)" default="127.0.0.1"/>
+        <setting type="number" id="ts-port" label="Порт" visible="eq(-2,1)" default="8090"/>
+    </category>
+</settings>

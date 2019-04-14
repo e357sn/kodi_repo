@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.chsv" name="ЧСВ" version="0.0.1" provider-name="Nemiroff">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="ru">Что Сегодня Включить</summary>
+        <license>GNU General Public License, v2</license>
+        <description lang="ru">ЧСВ - аддон отображающий свежие релизы в лучшем качестве.</description>
+        <disclaimer lang="ru">Моряки отправляются в далекое плавание...</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
